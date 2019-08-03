@@ -59,7 +59,7 @@ android {
         buildConfigField "String", "AD_MOB_REWARDED_AD_UNIT_ID", "\"" + getLocalProperty("admob.rewarded.adunitid") + "\""
         buildConfigField "String", "ENCRYPTION_SECRET_KEY", "\"" + getLocalProperty("encryption.secretkey") + "\""
 
-        applicationId 'ro.luca1152.gravitybox'
+        applicationId 'com.nightowldevelopers.bouncebox'
         minSdkVersion 16
         targetSdkVersion 29
         multiDexEnabled true
