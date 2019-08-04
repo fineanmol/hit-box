@@ -58,8 +58,8 @@ android {
         buildConfigField "String", "AD_MOB_INTERSTITIAL_AD_UNIT_ID", "\"" + getLocalProperty("admob.interstitial.adunitid") + "\""
         buildConfigField "String", "AD_MOB_REWARDED_AD_UNIT_ID", "\"" + getLocalProperty("admob.rewarded.adunitid") + "\""
         buildConfigField "String", "ENCRYPTION_SECRET_KEY", "\"" + getLocalProperty("encryption.secretkey") + "\""
-
-        applicationId 'com.nightowldevelopers.bouncebox'
+        versionCode 2
+        applicationId 'com.nightowldevelopers.hitbox'
         minSdkVersion 16
         targetSdkVersion 29
         multiDexEnabled true

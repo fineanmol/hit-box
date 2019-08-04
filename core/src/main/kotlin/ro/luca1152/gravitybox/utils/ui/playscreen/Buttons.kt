@@ -201,7 +201,7 @@ class GitHubButton(context: Context) : ClickButton(context.inject(), "empty-roun
     private val menuOverlayStage: MenuOverlayStage = context.inject()
     private val playScreen: PlayScreen = context.inject()
 
-    init {
+   /* init {
         addIcon("github-icon")
         addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
@@ -209,7 +209,7 @@ class GitHubButton(context: Context) : ClickButton(context.inject(), "empty-roun
                 menuOverlayStage.addActor(playScreen.gitHubPane)
             }
         })
-    }
+    }*/
 }
 
 class LevelEditorButton(context: Context) : ClickButton(context.inject(), "gray-full-round-button") {

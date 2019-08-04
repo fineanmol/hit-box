@@ -95,7 +95,7 @@ class PlayScreen(private val context: Context) : KtxScreen {
     val exitGameConfirmationPane = ExitGameConfirmationPane(context)
     val rateGamePromptPane = RateGamePromptPane(context) { menuOverlay.makeHeartButtonFull() }
     val heartPane = RateGameHeartPane(context) { menuOverlay.makeHeartButtonFull() }
-    val gitHubPane = GitHubPane(context)
+  //  val gitHubPane = GitHubPane(context)
     val skipLevelPane = SkipLevelPane(context)
     val levelEditorPane = LevelEditorPane(context)
 

@@ -51,8 +51,8 @@ class RateGameHeartPane(context: Context, makeHeartButtonFull: () -> Unit) : Pan
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 super.clicked(event, x, y)
                 when (Gdx.app.type) {
-                    Application.ApplicationType.Android -> Gdx.net.openURI("market://details?id=ro.luca1152.gravitybox")
-                    else -> Gdx.net.openURI("https://play.google.com/store/apps/details?id=ro.luca1152.gravitybox")
+                    Application.ApplicationType.Android -> Gdx.net.openURI("market://details?id=com.nightowldevelopers.hitbox")
+                    else -> Gdx.net.openURI("https://play.google.com/store/apps/details?id=com.nightowldevelopers.hitbox")
                 }
                 gameRules.DID_RATE_THE_GAME = true
                 makeHeartButtonFull()

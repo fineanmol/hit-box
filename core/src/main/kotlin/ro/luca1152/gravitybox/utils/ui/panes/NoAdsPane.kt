@@ -59,7 +59,7 @@ class NoAdsPane(context: Context) : Pane(
     )
     private val coffeeButton = Button(skin, "long-button").apply {
         val coffeeText = DistanceFieldLabel(context, "Coffee", skin, "regular", 36f, Color.WHITE)
-        val priceText = DistanceFieldLabel(context, "$1.99", skin, "regular", 36f, Color.WHITE)
+        val priceText = DistanceFieldLabel(context, "$1.99k", skin, "regular", 36f, Color.WHITE)
         add(coffeeText).padLeft(47f).expand().left()
         add(priceText).padRight(47f).expand().right()
         color.set(0 / 255f, 190 / 255f, 214 / 255f, 1f)

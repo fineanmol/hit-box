@@ -51,7 +51,7 @@ class GitHubPane(context: Context) : Pane(context, 600f, 440f, context.inject())
         addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 super.clicked(event, x, y)
-                Gdx.net.openURI("https://github.com/Luca1152/gravity-box")
+           //     Gdx.net.openURI("https://github.com/Luca1152/gravity-box")
                 this@GitHubPane.hide()
             }
         })
