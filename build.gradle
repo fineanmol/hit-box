@@ -83,10 +83,12 @@ def getLocalProperty(String propertyName) {
                 return "ca-app-pub-6425347832770094~4463370956"
             } else if (propertyName == "admob.interstitial.adunitid") {
                 // Debug interstitial ad unit ID
-                return "ca-app-pub-3940256099942544/1033173712"
+               // return "ca-app-pub-3940256099942544/1033173712"
+                return "ca-app-pub-6425347832770094/4771821708"
             } else if (propertyName == "admob.rewarded.adunitid") {
                 // Debug rewarded ad unit ID
-                return "ca-app-pub-3940256099942544/5224354917"
+              //  return "ca-app-pub-3940256099942544/5224354917"
+                return "ca-app-pub-6425347832770094/9832576698"
             } else if(propertyName=="encryption.secretkey") {
                 // Debug Encryption Key
                 return "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkIRWeoP1ok65+lODfEqxxkQ1nlqHHuP1Kz5kKu/ah5kXJeF+YIw45kcOksx6yPuNuwfC8RToQfeeG88Fpvj2RoH1epcWqurrubmcgLjJ5b06W9nI4zqZKu1DIZrzBDLrBcZCzzZJXvb6XJhMrxeK1jlqHqmpjZBUwUBiiuHZ94lswntDYSVIzQNyFBqZASzU+MbnqUbPlji7QVEjZiGXM6VZ7HEIa86X7maiaL9VP0d2SdSSxg8wkdkO3/aSsatbaPmrTi7VPxwbZZqi0EuNj4OigL36ozbi7PEbTtglcbk4E7RG07gG1TmpZhQhJqfqGQBC/8agZwAw99Hv0DeZlQIDAQAB"
