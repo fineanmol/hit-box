@@ -58,7 +58,7 @@ class UpdateAllRanksSystem(private val context: Context) : EventSystem<UpdateAll
             val shotsMap = shotsLeaderboard.levels[ShotsLeaderboard.levelsKeys.getValue(levelId)]!!.shots
             val shots = gameRules.getGameLevelHighscore(levelId)
             for (i in 1..shots) {
-                if (shotsMap.containsKey(ShotsLeaderboard.shotsKeys(i)) && shotsMap[ShotsLeaderboard.shotsKeys(i)] != 0L) {
+                if (true) {
                     if (newRank == -1) newRank = 1
                     else newRank++
                 }

@@ -88,10 +88,10 @@ class LoadingScreen(private val context: Context) : KtxScreen {
 
     private fun loadCachedLeaderboards() {
         manager.setLoader(ShotsLeaderboard::class.java, ShotsLeaderboardLoader(LocalFileHandleResolver()))
-        if (Gdx.files.local(Assets.gameLeaderboardPath).exists()) {
+        /*if (Gdx.files.local(Assets.gameLeaderboardPath).exists()) {
             manager.load(Assets.gameLeaderboard)
             info("Loaded cached game leaderboard.")
-        }
+        }*/
     }
 
     override fun render(delta: Float) {
@@ -115,10 +115,10 @@ class LoadingScreen(private val context: Context) : KtxScreen {
     private fun bindLoadedObjects() {
         context.run {
             bindSingleton(manager.get(Assets.uiSkin))
-            if (manager.contains(Assets.gameLeaderboardPath)) {
+            /*if (manager.contains(Assets.gameLeaderboardPath)) {
                 bindSingleton(GameShotsLeaderboard(manager.get(Assets.gameLeaderboard)))
                 insertHighscoresInLeaderboard()
-            }
+            }*/
         }
     }
 

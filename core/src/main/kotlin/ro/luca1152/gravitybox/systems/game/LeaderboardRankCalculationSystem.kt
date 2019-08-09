@@ -92,7 +92,7 @@ class LeaderboardRankCalculationSystem(
         var totalPlayers = 0L
         var totalPlayersWhoFinishedInFewerOrEqualShots = if (levelEntity.map.isNewRecord) 1L else 0L // 1 = the player himself
         shotsMap.forEach {
-            totalPlayers += it.value
+           // totalPlayers += it.value
             val intShots = ShotsLeaderboard.shotsKeysToInt((it.key))
             if (intShots <= shots) {
                 totalPlayersWhoFinishedInFewerOrEqualShots += it.value
