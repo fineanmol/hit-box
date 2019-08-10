@@ -63,7 +63,7 @@ class GameShotsLeaderboardController(context: Context) {
             }
         }
     }
-
+/*This method push values in firebase*/
     private fun incrementPlayerCountForShotsBy(level: Int, shots: Int, increment: Int) {
         if (!gameRules.IS_MOBILE) {
             return

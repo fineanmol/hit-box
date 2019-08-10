@@ -42,6 +42,9 @@ import ro.luca1152.gravitybox.utils.ui.button.ClickButton
 import ro.luca1152.gravitybox.utils.ui.panes.LeaderboardPane
 import ro.luca1152.gravitybox.utils.ui.panes.NoAdsPane
 
+
+
+
 class RestartButton(context: Context) : ClickButton(context.inject(), "color-round-button-padded") {
     // Injected objects
     private val playScreen: PlayScreen = context.inject()
@@ -201,15 +204,17 @@ class GitHubButton(context: Context) : ClickButton(context.inject(), "empty-roun
     private val menuOverlayStage: MenuOverlayStage = context.inject()
     private val playScreen: PlayScreen = context.inject()
 
-   /* init {
-        addIcon("github-icon")
+    init {
+       addIcon("github-icon")
+
         addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
                 super.clicked(event, x, y)
+
                 menuOverlayStage.addActor(playScreen.gitHubPane)
             }
         })
-    }*/
+    }
 }
 
 class LevelEditorButton(context: Context) : ClickButton(context.inject(), "gray-full-round-button") {

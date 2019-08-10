@@ -50,9 +50,9 @@ class CurrentLevelShotsCachingSystem(
 
     private fun cacheRank() {
         val shotsLeaderboard: GameShotsLeaderboard? = context.injectNullable()
-        if (shotsLeaderboard != null) {
+        if (true) {
             val shots = levelEntity.map.shots
-            val playerCountStoredInLeaderboard = shotsLeaderboard.levels[ShotsLeaderboard.levelsKeys.getValue(levelEntity.level.levelId)]!!
+            val playerCountStoredInLeaderboard = shotsLeaderboard!!.levels[ShotsLeaderboard.levelsKeys.getValue(levelEntity.level.levelId)]!!
                 .shots[ShotsLeaderboard.shotsKeys(shots)] ?: 0L
             shotsLeaderboard.levels[ShotsLeaderboard.levelsKeys.getValue(levelEntity.level.levelId)]!!
                 .shots[ShotsLeaderboard.shotsKeys(shots)] = playerCountStoredInLeaderboard + 1

@@ -95,7 +95,7 @@ class PlayScreen(private val context: Context) : KtxScreen {
     val exitGameConfirmationPane = ExitGameConfirmationPane(context)
     val rateGamePromptPane = RateGamePromptPane(context) { menuOverlay.makeHeartButtonFull() }
     val heartPane = RateGameHeartPane(context) { menuOverlay.makeHeartButtonFull() }
-  //  val gitHubPane = GitHubPane(context)
+    val gitHubPane = GitHubPane(context)
     val skipLevelPane = SkipLevelPane(context)
     val levelEditorPane = LevelEditorPane(context)
 
@@ -108,8 +108,8 @@ class PlayScreen(private val context: Context) : KtxScreen {
 
     // Labels
     val rankLabel = object : OutlineDistanceFieldLabel(
-        context, "rank #x",
-        skin, "regular", 37f, Colors.gameColor
+            context, "rank #x",
+            skin, "regular", 37f, Colors.gameColor
     ) {
         private val rankTexts = (1..200).associateWith { "rank #$it" }
 
@@ -174,12 +174,12 @@ class PlayScreen(private val context: Context) : KtxScreen {
 
     private fun createGameEntities() {
         levelEntity = LevelEntity.createEntity(
-            context,
-            when {
-                gameRules.PLAY_SPECIFIC_LEVEL != -1 -> gameRules.PLAY_SPECIFIC_LEVEL
-                gameRules.CAN_PLAY_ANY_LEVEL -> 1
-                else -> min(gameRules.HIGHEST_FINISHED_LEVEL + 1, gameRules.LEVEL_COUNT)
-            }
+                context,
+                when {
+                    gameRules.PLAY_SPECIFIC_LEVEL != -1 -> gameRules.PLAY_SPECIFIC_LEVEL
+                    gameRules.CAN_PLAY_ANY_LEVEL -> 1
+                    else -> min(gameRules.HIGHEST_FINISHED_LEVEL + 1, gameRules.LEVEL_COUNT)
+                }
         ).apply {
             level.loadMap = true
             level.forceUpdateMap = true

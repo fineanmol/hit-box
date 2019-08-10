@@ -25,6 +25,7 @@ import ro.luca1152.gravitybox.utils.kotlin.info
 import ro.luca1152.gravitybox.utils.kotlin.injectNullable
 import ro.luca1152.gravitybox.utils.leaderboards.GameShotsLeaderboard
 import ro.luca1152.gravitybox.utils.leaderboards.ShotsLeaderboard
+import sun.rmi.runtime.Log
 
 class UpdateAllRanksEvent : Event
 class UpdateAllRanksSystem(private val context: Context) : EventSystem<UpdateAllRanksEvent>(context.inject(), UpdateAllRanksEvent::class) {
@@ -76,6 +77,7 @@ class UpdateAllRanksSystem(private val context: Context) : EventSystem<UpdateAll
             var totalPlayersWhoFinishedInFewerOrEqualShots = 0L
             shotsMap.forEach {
                 totalPlayers += it.value
+
                 if (it.key.substring(1).toLong() <= shots) {
                     totalPlayersWhoFinishedInFewerOrEqualShots += it.value
                 }

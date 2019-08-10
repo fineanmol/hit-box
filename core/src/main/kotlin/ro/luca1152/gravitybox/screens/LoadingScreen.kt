@@ -29,11 +29,14 @@ import ktx.assets.load
 import ktx.inject.Context
 import ro.luca1152.gravitybox.GameRules
 import ro.luca1152.gravitybox.MyGame
+import ro.luca1152.gravitybox.systems.game.UpdateAllRanksEvent
+import ro.luca1152.gravitybox.systems.game.WriteEntireLeaderboardToStorageEvent
 import ro.luca1152.gravitybox.utils.assets.Assets
 import ro.luca1152.gravitybox.utils.assets.loaders.*
 import ro.luca1152.gravitybox.utils.kotlin.*
 import ro.luca1152.gravitybox.utils.leaderboards.GameShotsLeaderboard
 import ro.luca1152.gravitybox.utils.leaderboards.ShotsLeaderboard
+import ro.luca1152.gravitybox.utils.ui.panes.LeaderboardPane
 
 class LoadingScreen(private val context: Context) : KtxScreen {
     // Injected objects
@@ -48,6 +51,7 @@ class LoadingScreen(private val context: Context) : KtxScreen {
     private var loadingAssetsTimer = 0f
     private val finishedLoadingAssets
         get() = manager.update()
+
     private val gravityBoxText = Image(Texture(Gdx.files.internal("graphics/gravity-box-text.png")).apply {
         setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear)
     }).apply {
@@ -65,6 +69,8 @@ class LoadingScreen(private val context: Context) : KtxScreen {
 
     private fun showSplashScreen() {
         uiStage.addActor(gravityBoxText)
+       loadCachedLeaderboards()
+
     }
 
     private fun loadGraphics() {
@@ -115,9 +121,12 @@ class LoadingScreen(private val context: Context) : KtxScreen {
     private fun bindLoadedObjects() {
         context.run {
             bindSingleton(manager.get(Assets.uiSkin))
+            show()
+
+
             /*if (manager.contains(Assets.gameLeaderboardPath)) {
                 bindSingleton(GameShotsLeaderboard(manager.get(Assets.gameLeaderboard)))
-                insertHighscoresInLeaderboard()
+            // insertHighscoresInLeaderboard()
             }*/
         }
     }
@@ -134,6 +143,7 @@ class LoadingScreen(private val context: Context) : KtxScreen {
         for (i in 1..gameRules.HIGHEST_FINISHED_LEVEL) {
             val highscore = gameRules.getGameLevelHighscore(i)
             if (highscore != gameRules.DEFAULT_HIGHSCORE_VALUE) {
+
                 val levelKey = ShotsLeaderboard.levelsKeys[i]
                 val shotsKey = ShotsLeaderboard.shotsKeys(highscore)
                 if (leaderboard.levels.containsKey(levelKey)) {
