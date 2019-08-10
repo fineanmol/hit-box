@@ -205,7 +205,8 @@ class GitHubButton(context: Context) : ClickButton(context.inject(), "empty-roun
     private val playScreen: PlayScreen = context.inject()
 
     init {
-       addIcon("github-icon")
+
+        addIcon("github-icon")
 
         addListener(object : ClickListener() {
             override fun clicked(event: InputEvent?, x: Float, y: Float) {
